@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+    <record model="res.partner.demo.ept1" id="res_partner_demo_ept1_data1">
+        <field name="name">sejal</field>
+        <field name="email">sejal@gmail.com</field>
+<!--        <field name="birthdate"></field>-->
+        <field name="street1">Street no1</field>
+        <field name="street2">Street no2</field>
+        <field name="city">Rajkot</field>
+        <field name="state">Gujrat</field>
+        <field name="country">India</field>
+        <field name="gender">Female</field>
+        <field name="age">22</field>
+        <field name="is_spectacles">1</field>
+    </record>
+    <record model="res.partner.demo.ept1" id="res_partner_demo_ept1_data2">
+        <field name="name">Amit</field>
+        <field name="email">Amit@gmail.com</field>
+        <field name="street1">Street no1</field>
+        <field name="street2">Street no2</field>
+        <field name="city">Gondal</field>
+        <field name="state">Gujrat</field>
+        <field name="country">India</field>
+        <field name="gender">Male</field>
+        <field name="age">22</field>
+        <field name="is_spectacles">1</field>
+    </record>
+    <record model="res.partner.demo.ept1" id="res_partner_demo_ept1_data3">
+        <field name="name">Hitesh</field>
+        <field name="email">Hitesh@gmail.com</field>
+        <field name="street1">Street no1</field>
+        <field name="street2">Street no2</field>
+        <field name="city">Junagadh</field>
+        <field name="state">Gujrat</field>
+        <field name="country">India</field>
+        <field name="gender">Male</field>
+        <field name="age">24</field>
+        <field name="is_spectacles">0</field>
+    </record>
+     <record model="res.partner.demo.ept1" id="res_partner_demo_ept1_data4">
+        <field name="name">Harsh</field>
+        <field name="email">harsh111@gmail.com</field>
+        <field name="street1">Street no1</field>
+        <field name="street2">Street no2</field>
+        <field name="city">Rajkot</field>
+        <field name="state">Gujrat</field>
+        <field name="country">India</field>
+        <field name="gender">Male</field>
+        <field name="age">26</field>
+         <field name="is_spectacles">0</field>
+    </record>
+    <record model="res.partner.demo.ept1" id="res_partner_demo_ept1_data5">
+        <field name="name">Shankar</field>
+        <field name="email">SK@gmail.com</field>
+        <field name="street1">Street no1</field>
+        <field name="street2">Street no2</field>
+        <field name="city">Rajkot</field>
+        <field name="state">Gujrat</field>
+        <field name="country">India</field>
+        <field name="gender">Male</field>
+        <field name="age">21</field>
+        <field name="is_spectacles">1</field>
+    </record>
+
+    </data>
+</openerp>
