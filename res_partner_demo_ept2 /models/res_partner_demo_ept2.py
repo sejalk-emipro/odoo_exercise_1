@@ -1,8 +1,9 @@
-# -*- coding: UTC-8 -*-
+# -*- coding: utf-8 -*-
 
 from openerp import models,fields
 
-class PartnerDemo2(models.Models):
+class PartnerDemo2(models.Model):
+
     _name="res.partner.demo.ept2"
     _description="Partner Demo2"
 

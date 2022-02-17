@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="res_country_demo_data1" model="res.country.demo.ept">
+            <field name="name">India</field>
+            <field name="code">356</field>
+        </record>
+        <record id="res_country_demo_data2" model="res.country.demo.ept">
+            <field name="name">China</field>
+            <field name="code">156</field>
+        </record>
+        <record id="res_country_demo_data3" model="res.country.demo.ept">
+            <field name="name">Iraq</field>
+            <field name="code">368</field>
+        </record>
+        <record id="res_country_demo_data4" model="res.country.demo.ept">
+            <field name="name">Italy</field>
+            <field name="code">380</field>
+        </record>
+
+        <record id="res_state_demo_data1" model="res.state.demo.ept">
+            <field name="name">Gujrat</field>
+            <field name="code">Guj200</field>
+            <field name="country">India</field>
+        </record>
+
+         <record id="res_state_demo_data2" model="res.state.demo.ept">
+            <field name="name">Panjab</field>
+            <field name="code">pan001</field>
+            <field name="country">India</field>
+        </record>
+
+         <record id="res_state_demo_data3" model="res.state.demo.ept">
+            <field name="name">Delhi</field>
+            <field name="code">Del002</field>
+            <field name="country">India</field>
+        </record>
+
+        <record model="res.city.demo.ept" id="res_city_demo_data1">
+            <field name="name">Surat</field>
+            <field name="state">Gujrat</field>
+        </record>
+
+        <record model="res.city.demo.ept" id="res_city_demo_data2">
+            <field name="name">Ludhiana</field>
+            <field name="state">Panjab</field>
+        </record>
+
+        <record model="res.city.demo.ept" id="res_city_demo_data3">
+            <field name="name">Mehrauli</field>
+            <field name="state">Delhi</field>
+        </record>
+    </data>
+</openerp>

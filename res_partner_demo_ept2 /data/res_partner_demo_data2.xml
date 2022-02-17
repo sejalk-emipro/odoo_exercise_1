@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data noupdate="1">
+        <record id="res_partner_demo_ept2_data1" model="res.partner.demo.ept2">
+            <field name="name">Diya</field>
+            <field name="email">diya@Gmail.com</field>
+            <field name="birthdate">1997/12/01</field>
+            <field name="is_spectacles">1</field>
+            <field name="city">Baroda</field>
+            <field name="state">Gujrat</field>
+            <field name="country">India</field>
+            <field name="age">22</field>
+            <field name="street1">Street 1</field>
+            <field name="street2">Street 2</field>
+            <field name="gender">Female</field>
+        </record>
+        <record id="res_partner_demo_ept2_data2" model="res.partner.demo.ept2">
+            <field name="name">Mital Patel</field>
+            <field name="email">MitalP@Gmail.com</field>
+            <field name="birthdate">1991/10/10</field>
+            <field name="city">Rajkot</field>
+            <field name="state">Gujrat</field>
+            <field name="country">India</field>
+            <field name="age">30</field>
+            <field name="street1">Street 1</field>
+            <field name="street2">Street 2</field>
+            <field name="gender">Female</field>
+        </record>
+        <record id="res_partner_demo_ept2_data3" model="res.partner.demo.ept2">
+            <field name="name">Krish Patel</field>
+            <field name="email">KPatel@Gmail.com</field>
+            <field name="birthdate">1996/01/12</field>
+            <field name="is_spectacles">1</field>
+            <field name="city">Ahemdabad</field>
+            <field name="state">Gujrat</field>
+            <field name="country">India</field>
+            <field name="age">25</field>
+            <field name="street1">Street 1</field>
+            <field name="street2">Street 2</field>
+            <field name="gender">Male</field>
+        </record>
+        <record id="res_partner_demo_ept2_data4" model="res.partner.demo.ept2">
+            <field name="name">Dev Patel</field>
+            <field name="email">DPatel@Gmail.com</field>
+            <field name="birthdate">2000/05/20</field>
+            <field name="is_spectacles">1</field>
+            <field name="city">Surat</field>
+            <field name="state">Gujrat</field>
+            <field name="country">India</field>
+            <field name="age">21</field>
+            <field name="street1">Street 1</field>
+            <field name="street2">Street 2</field>
+            <field name="gender">Male</field>
+        </record>
+    </data>
+</openerp>

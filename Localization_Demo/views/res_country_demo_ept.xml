@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+<!--    start  Country view and action-->
+        <record id="view_res_country_demo_ept_tree" model="ir.ui.view">
+            <field name="name">res.country.demo.tree</field>
+            <field name="model">res.country.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="Country Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_res_country_ept_form" model="ir.ui.view">
+            <field name="name">res.country.demo.form</field>
+            <field name="model">res.country.demo.ept</field>
+            <field name="arch" type="xml">
+                <form name="Country Data">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="res_country_demo_ept_search" model="ir.ui.view">
+            <field name="name">res.country.demo.search</field>
+            <field name="model">res.country.demo.ept</field>
+            <field name="arch" type="xml">
+                <search name="Country Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter name="filter_active" string="Active" domain="[('active','=',1)]"/>
+                    <filter name="filter_inactive" string="Inactive" domain="[('active','=',0)]"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_res_country_demo_ept">
+            <field name="name">Add Countries</field>
+            <field name="res_model">res.country.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="res_country_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the country details</p>
+            </field>
+        </record>
+<!--End Country view and action -->
+<!--        Start State view and action-->
+        <record id="view_res_state_ept_tree" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_tree</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="State Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_res_state_demo_ept_from" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_from</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <form name="State Data">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country" copy="False"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_res_state_demo_ept_search" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_search</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <search string="State Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter name="filter_active" string="Active" domain="[('active','=',1)]"/>
+                    <filter name="filter_inactive" string="In Active" domain="[('active','=',0)]"/>
+                    <group expand="0" name="Group by">
+                        <filter name="filter_country" string="Country" domain="[]" context="{'group_by':'country'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_res_state_demo_ept" model="ir.actions.act_window">
+            <field name="name">State_Action</field>
+            <field name="res_model">res.state.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_res_state_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the details of the state</p>
+            </field>
+        </record>
+
+<!--End State view and action-->
+<!--Start City view and action-->
+      <record id="view_res_city_demo_ept_tree" model="ir.ui.view">
+            <field name="name">res_city_demo_ept_tree</field>
+            <field name="model">res.city.demo.ept</field>
+          <field name="arch" type="xml">
+              <tree editable="top" name="City Data">
+                  <field name="name"/>
+                  <field name="state"/>
+                  <field name="active"/>
+              </tree>
+          </field>
+      </record>
+        <record id="view_res_city_demo_ept_search" model="ir.ui.view">
+            <field name="name">res_city_demo_ept_search</field>
+            <field name="model">res.city.demo.ept</field>
+            <field name="arch" type="xml">
+                <search name="City Data">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <filter name="filter_active" string="Active" domain="[('active','=',1)]"/>
+                    <filter name="filter_inactive" string="In Active" domain="[('active','=',0)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_res_city_demo_ept" model="ir.actions.act_window">
+            <field name="name">Add City</field>
+            <field name="res_model">res.city.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="view_res_city_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the details of the city</p>
+            </field>
+        </record>
+<!--End City model View and Action-->
+        <menuitem id="menu_res_country_demo_root" name="Parent Menu"/>
+        <menuitem id="menu_res_localization_demo" name="Localization" parent="menu_res_country_demo_root" />
+        <menuitem id="menu_res_country_demo_sub" name="Country" parent="menu_res_localization_demo" action="action_res_country_demo_ept" />
+        <menuitem id="menu_res_state_ept_sub" name="States" parent="menu_res_localization_demo" action="action_res_state_demo_ept"/>
+        <menuitem id="menu_res_city_ept_sub" name="City" parent="menu_res_localization_demo" action="action_res_city_demo_ept"/>
+
+    </data>
+</openerp>

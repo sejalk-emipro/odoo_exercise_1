@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_res_state_ept_tree" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_tree</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="State Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_res_state_demo_ept_from" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_from</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <form name="State Data">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_res_state_demo_ept_search" model="ir.ui.view">
+            <field name="name">res_state_demo_ept_search</field>
+            <field name="model">res.state.demo.ept</field>
+            <field name="arch" type="xml">
+                <search string="State Data">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter name="filter_active" string="Active" domain="[('active','=',1)]"/>
+                    <filter name="filter_active" string="In Active" domain="[('active','=',0)]"/>
+                    <group expand="0" name="Group by">
+                        <filter name="filter_country" string="Country" domain="[]" context="{'group_by':'country'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_res_state_demo_ept" model="ir.actions.act_window">
+            <field name="name">State_Action</field>
+            <field name="res_model">res.state.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_res_state_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the details of the state</p>
+            </field>
+        </record>
+
+        <menuitem id="menu_res_state_ept_root" name="Localization"/>
+        <menuitem id="menu_res_state_ept_sub" name="States" parent="menu_res_state_ept_root"/>
+        <menuitem id="menu_res_state_ept_sub1" name="States" parent="menu_res_state_ept_sub" action="action_res_state_demo_ept"/>
+
+    </data>
+</openerp>
