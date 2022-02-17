@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_product_ept_tree" model="ir.ui.view">
+            <field name="name">product_ept_tree</field>
+            <field name="model">product.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="Product Demo">
+                    <field name="name"/>
+                    <field name="sku"/>
+                    <field name="barcode"/>
+                    <field name="product_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_ept_form" model="ir.ui.view">
+            <field name="name">Product Details</field>
+            <field name="model">product.demo.ept</field>
+            <field name="arch" type="xml">
+                <form name="Product Demo">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_image"/>
+                                <field name="product_sold"/>
+                                <field name="active"/>
+                                <field name="name"/>
+                                <field name="sku"/>
+                            </group>
+                            <group>
+                                <field name="product_type"/>
+                                <field name="barcode"/>
+                                <field name="sale_price"/>
+                                <field name="cost_price"/>
+                                <field name="warehouse"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Website Description">
+                                <field name="website_des"/>
+                            </page>
+                            <page string="Internal Note">
+                                <field name="internal_note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_product_demo_ept_search">
+            <field name="name">product_demo_ept_search</field>
+            <field name="model">product.demo.ept</field>
+            <field name="arch" type="xml">
+                <search name="Product Search">
+                    <field name="name"/>
+                    <field name="product_sold"/>
+                    <field name="sku"/>
+                    <field name="barcode"/>
+                    <field name="product_sold"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_product_demo_ept" model="ir.actions.act_window">
+            <field name="name">Product_action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.demo.ept</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_product_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the product details</p>
+            </field>
+        </record>
+
+        <menuitem id="menu_product_demo_root" name="Parent Menu"/>
+        <menuitem name="My Sales" id="menu_product_demo_sub" parent="menu_product_demo_root"/>
+        <menuitem id="menu_product_demo_ept_sub1" name="Products" parent="menu_product_demo_sub" action="action_product_demo_ept"/>
+
+    </data>
+</openerp>
