@@ -10,18 +10,12 @@
                     <field name="email"/>
                     <field name="birthdate"/>
                     <field name="age"/>
-<!--                    <field name="street1"/>-->
-<!--                    <field name="street2"/>-->
                     <field name="city"/>
                     <field name="state"/>
                     <field name="country"/>
                     <field name="zip_code"/>
-<!--                    <field name="weight"/>-->
-<!--                    <field name="description"/>-->
                     <field name="gender"/>
-<!--                    <field name="details"/>-->
                     <field name="is_spectacles"/>
-<!--                    <field name="photo"/>-->
                 </tree>
             </field>
         </record>
@@ -47,7 +41,7 @@
                             <field name="weight"/>
                             <field name="gender"/>
                             <field name="is_spectacles"/>
-                             <field name="photo"/>
+                             <field name="photo" widget='image'/>
                         </group>
                     </group>
                     <notebook>

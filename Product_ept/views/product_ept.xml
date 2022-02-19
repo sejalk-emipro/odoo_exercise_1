@@ -22,14 +22,14 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="product_image"/>
+                                <field name="product_image" widget='image'/>
                                 <field name="product_sold"/>
                                 <field name="active"/>
                                 <field name="name"/>
                                 <field name="sku"/>
                             </group>
                             <group>
-                                <field name="product_type"/>
+                                <field name="product_type" widget="radio"/>
                                 <field name="barcode"/>
                                 <field name="sale_price"/>
                                 <field name="cost_price"/>

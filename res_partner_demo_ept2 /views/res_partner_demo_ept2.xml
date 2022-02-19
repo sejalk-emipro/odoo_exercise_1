@@ -41,7 +41,7 @@
                             <field name="zip_code"/>
                             <field name="state"/>
                             <field name="country"/>
-                            <field name="photo"/>
+                            <field name="photo" widget='image' />
                         </group>
                     </group>
                     <notebook>

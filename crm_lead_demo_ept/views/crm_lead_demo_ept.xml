@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_crm_lead_demo_tree" model="ir.ui.view">
+            <field name="name">CRM Lead Demo Tree</field>
+            <field name="model">crm.lead.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="CRM Lead Demo" colors="red:state in ('Lost',);green:state in ('Won',);orange:state in ('Proposition')">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="expected_revenue"/>
+                    <field name="salesperson"/>
+                    <field name="sales_team"/>
+                    <field name="campaign"/>
+                    <field name="channel"/>
+                    <field name="next_follow_date"/>
+                    <field name="won_date"/>
+                    <field name="lost_reason"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_crm_lead_demo_form" model="ir.ui.view">
+            <field name="name">CRM Lead</field>
+            <field name="model">crm.lead.demo.ept</field>
+            <field name="arch" type="xml">
+                <form string="CRM Lead Demo">
+                     <header>
+                         <field name="state" nolabel="1" widget="statusbar" clickable="True"/>
+                     </header>
+                    <sheet string="CRM Lead">
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="expected_revenue"/>
+                                <field name="salesperson"/>
+                                <field name="sales_team"/>
+                            </group>
+                            <group>
+                                <field name="campaign"/>
+                                <field name="channel"/>
+                                <field name="next_follow_date"/>
+                                <field name="won_date"/>
+                                <field name="lost_reason"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_crm_lead_demo_search">
+            <field name="name">CRM Lead Search</field>
+            <field name="model">crm.lead.demo.ept</field>
+            <field name="arch" type="xml">
+                <search string="CRM Lead">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <separator/>
+                    <filter name="today" string="Today" domain="[('next_follow_date','=',datetime.date.today().strftime('%Y-%m-%d'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="filter_channel" string="Channel" domain="[]" context="{'group_by':'channel'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_crm_lead_demo" model="ir.actions.act_window">
+            <field name="name">CRM Lead Demo</field>
+            <field name="res_model">crm.lead.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+             <field name="context">{"search_default_today":1}</field>
+            <field name="search_view_id" ref="view_crm_lead_demo_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the details of the CRM Lead</p>
+            </field>
+        </record>
+
+        <menuitem name="CRM Lead" id="menu_crm_lead_demo_ept_root"/>
+        <menuitem name="CRM Lead Details" id="menu_crm_lead_demo_ept_sub" parent="menu_crm_lead_demo_ept_root"/>
+        <menuitem id="menu_crm_lead_demo_sub1"
+                  parent="menu_crm_lead_demo_ept_sub" name="CRM" action="action_crm_lead_demo"/>
+    </data>
+</openerp>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_employee_demo_ept_tree" model="ir.ui.view">
+            <field name="name">Employee_tree</field>
+            <field name="model">employee.demo.ept</field>
+            <field name="arch" type="xml">
+                <tree name="Employee Data">
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="hire_date"/>
+                    <field name="job_type"/>
+                    <field name="department"/>
+                    <field name="position"/>
+<!--                    <field name="salary"/>-->
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_employee_demo_ept_form" model="ir.ui.view">
+            <field name="name">Employee Data</field>
+            <field name="model">employee.demo.ept</field>
+            <field name="arch" type="xml">
+                <form name="Employee Form View">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="hire_date"/>
+                                <field name="department"/>
+                                <field name="salary"/>
+                            </group>
+                            <group>
+                                 <field name="gender"/>
+                                 <field name="job_type"/>
+                                 <field name="position"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_employee_demo_ept_search" model="ir.ui.view">
+            <field name="name">Employee_Search_View</field>
+            <field name="model">employee.demo.ept</field>
+            <field name="arch" type="xml">
+                <search name="Employee Search view">
+                    <field name="name"/>
+                    <field name="position"/>
+                    <field name="department"/>
+                    <filter name="filter_permanent" string="Permanent" domain="[('job_type','=','Permanent')]"/>
+                    <filter name="filter_adhoc" string="Adhoc" domain="[('job_type','=','Adhoc')]"/>
+                    <filter domain="[('gender','=','Male')]" name="filter_male" string="Male"/>
+                    <filter string="Female" name="filter_female" domain="[('gender','=','Female')]"/>
+                    <filter domain="[('gender','=','Transgender')]" name="filter_transgender" string="Transgender"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Job Position" name="filter_position" domain="[]" context="{'group_by':'position'}"/>
+                        <filter domain="[]" name="filter_department" string="Department" context="{'group_by':'department'}"/>
+                        <filter context="{'group_by':'job_type'}" string="Job Type" name="filter_jobtype" domain="[]"/>
+                        <filter domain="[]" name="filter_gender" string="Gender" context="{'group_by':'gender'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_employee_demo_ept">
+            <field name="name">Employee Details</field>
+            <field name="res_model">employee.demo.ept</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_employee_demo_ept_search"/>
+            <field name="help" type="html">
+                <p>Here you can enter the employee details</p>
+            </field>
+        </record>
+        <menuitem name="Employee" id="menu_employee_root"/>
+        <menuitem name="Employee Details" id="menu_employee_details_sub" parent="menu_employee_root"/>
+        <menuitem id="menu_employee_allemployee" name="All Employee" parent="menu_employee_details_sub" action="action_employee_demo_ept"/>
+    </data>
+</openerp>
